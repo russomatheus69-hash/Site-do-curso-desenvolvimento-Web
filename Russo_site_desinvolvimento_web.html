@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meu Site</title>
+
+<style>
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background-image: url('fundoverde.avif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+
+  padding-top: 70px;
+}
+
+/* MENU SUPERIOR */
+.topbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.topbar a{
+  color: white;
+  text-decoration: none;
+
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.topbar a:hover{
+  color: #81CF65;
+}
+
+/* TEXTO CENTRAL */
+.conteudo{
+  position: absolute;
+  top: 210px;
+
+  width: 100%;
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.conteudo h1{
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.conteudo p{
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* SIDEBAR */
+.sidebar{
+  position: fixed;
+  top: 0;
+  right: -250px;
+
+  width: 250px;
+  height: 100vh;
+
+  background: #81CF65;
+  transition: 0.3s;
+
+  padding-top: 60px;
+
+  z-index: 1000;
+}
+
+.sidebar.ativa{
+  right: 0;
+}
+
+.sidebar a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+}
+
+.sidebar a:hover{
+  background: #34495e;
+}
+
+/* BOTÃO MENU */
+.menu-btn{
+  position: fixed;
+  top: 15px;
+  right: 20px;
+
+  background: #3498db;
+  color: white;
+  border: none;
+
+  padding: 12px 15px;
+  font-size: 20px;
+  cursor: pointer;
+
+  border-radius: 8px;
+  z-index: 1001;
+}
+
+/* PRIMEIRO CARROSSEL */
+.carousel{
+  position: absolute;
+  bottom: 40px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track{
+  display: flex;
+  width: max-content;
+
+  animation: slide 20s linear infinite;
+}
+
+.carousel img{
+  width: 300px;
+  height: 180px;
+
+  object-fit: cover;
+
+  margin-right: 20px;
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* SEGUNDO CARROSSEL */
+.carousel2{
+  position: absolute;
+  bottom: 260px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track2{
+  display: flex;
+  width: max-content;
+
+  animation: slide2 15s linear infinite;
+}
+
+.carousel2 img{
+  width: 300px;
+  height: 180px;
+
+  object-fit: cover;
+
+  margin-right: 20px;
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* ANIMAÇÕES */
+@keyframes slide{
+  from{
+    transform: translateX(0);
+  }
+
+  to{
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slide2{
+  from{
+    transform: translateX(-50%);
+  }
+
+  to{
+    transform: translateX(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MENU SUPERIOR -->
+<div class="topbar">
+  <a href="sobre.html">Início</a>
+  <a href="#">Professores</a>
+  <a href="#">Modalidades</a>
+  <a href="#">niveis</a>
+  <a href="#">Matriculas</a>
+  <a href="#">Contato</a>
+</div>
+
+<!-- TEXTO CENTRAL -->
+<div class="conteudo">
+  <h1>O CURSO</h1>
+  <p>Matricule-se ja</p>
+</div>
+
+<!-- BOTÃO -->
+<button class="menu-btn" onclick="abrirMenu()">☰</button>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <a href="#">Início</a>
+  <a href="#">Perfil</a>
+  <a href="#">Configurações</a>
+  <a href="#">Contato</a>
+</div>
+
+<!-- SEGUNDO CARROSSEL -->
+<div class="carousel2">
+  <div class="carousel-track2">
+
+    <img src="imagenchama.jpg">
+    <img src="feedback.png">
+    <img src="ben10.jpg">
+    <img src="aliens.png">
+    <img src="Alienxx.webp">
+    <img src="4bracos.jpg">
+
+    <!-- REPETE -->
+    <img src="imagenchama.jpg">
+    <img src="EcoEcoAberturaFA2.webp">
+    <img src="aliens.png">
+    <img src="aliens2.webp">
+    <img src="Alienxx.webp">
+
+  </div>
+</div>
+
+<!-- PRIMEIRO CARROSSEL -->
+<div class="carousel">
+  <div class="carousel-track">
+
+    <img src="imagenchama.jpg">
+    <img src="EcoEcoAberturaFA2.webp">
+    <img src="aliens.png">
+    <img src="aliens2.webp">
+    <img src="friagem2.jpg">
+    <img src="Alienxx.webp">
+    <img src="friagem.jpg">
+
+    <!-- REPETE -->
+    <img src="imagenchama.jpg">
+    <img src="EcoEcoAberturaFA2.webp">
+    <img src="aliens.png">
+    <img src="aliens2.webp">
+    <img src="friagem2.jpg">
+    <img src="Alienxx.webp">
+    <img src="friagem.jpg">
+
+  </div>
+</div>
+
+<script>
+
+function abrirMenu(){
+  document.getElementById("sidebar")
+  .classList.toggle("ativa");
+}
+
+</script>
+
+</body>
+</html>
