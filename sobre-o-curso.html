@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background-image: url('fundoverde.avif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  overflow: hidden;
+
+  padding-top: 70px;
+}
+
+/* MENU SUPERIOR */
+.topbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.topbar a{
+  color: white;
+  text-decoration: none;
+
+  margin: 0 25px;
+  font-size: 18px;
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.topbar a:hover{
+  color: #81CF65;
+}
+
+/* TEXTO CENTRAL */
+.conteudo{
+  position: absolute;
+  top: 210px;
+
+  width: 100%;
+  text-align: center;
+
+  color: white;
+
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+}
+
+.conteudo h1{
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.conteudo p{
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CARDS */
+.cards{
+  position: absolute;
+  top: 110px;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  gap: 310px;
+}
+
+.card{
+  text-align: center;
+  width: 320px;
+}
+
+.card img{
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+
+  transition: 0.3s;
+}
+
+.card img:hover{
+  transform: scale(1.05);
+}
+
+/* TEXTO ABAIXO DAS IMAGENS */
+.card h3{
+  color: #81CF65;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.card p{
+  color: white;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+
+  <a href="index-site-do-curso.html">Inicio</a>
+  <a href="#">Professores</a>
+  <a href="#">Modalidades</a>
+  <a href="#">Contato</a>
+
+</div>
+
+<!-- IMAGENS -->
+<div class="cards">
+
+  <div class="card">
+    <img src="4bracos.jpg">
+    <h3>Sobre Nós</h3>
+    <p>Força bruta alienígena</p>
+  </div>
+
+  <div class="card">
+    <img src="Alienxx.webp">
+    <h3>Metodologia</h3>
+    <p>Poder cósmico supremo</p>
+  </div>
+
+  <div class="card">
+    <img src="friagem.jpg">
+    <h3>metodo de trabalho</h3>
+    <p>Controle absoluto do gelo</p>
+  </div>
+
+</div>
+
+</body>
+</html>
+Metodologia

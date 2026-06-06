@@ -12,7 +12,7 @@ body{
   margin: 0;
   font-family: Arial, sans-serif;
 
-  background-image: url('fundoverde.avif');
+  background-image: url('fundo-index.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -55,6 +55,67 @@ body{
   color: #81CF65;
 }
 
+/* LOGIN E CADASTRO */
+.auth-buttons{
+  position: fixed;
+  top: 15px;
+  right: 80px;
+
+  z-index: 1001;
+}
+
+.auth-buttons button{
+  background: #81CF65;
+  color: white;
+  border: none;
+
+  padding: 10px 15px;
+  margin-left: 5px;
+
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.formulario{
+  display: none;
+
+  position: fixed;
+  top: 80px;
+  right: 20px;
+
+  width: 300px;
+
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+  z-index: 1002;
+}
+
+.formulario h3{
+  margin-top: 0;
+}
+
+.formulario input{
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.formulario button{
+  width: 100%;
+  padding: 10px;
+
+  background: #81CF65;
+  color: white;
+  border: none;
+
+  border-radius: 5px;
+}
+
 /* TEXTO CENTRAL */
 .conteudo{
   position: absolute;
@@ -77,56 +138,6 @@ body{
   font-size: 18px;
   max-width: 600px;
   margin: 0 auto;
-}
-
-/* SIDEBAR */
-.sidebar{
-  position: fixed;
-  top: 0;
-  right: -250px;
-
-  width: 250px;
-  height: 100vh;
-
-  background: #81CF65;
-  transition: 0.3s;
-
-  padding-top: 60px;
-
-  z-index: 1000;
-}
-
-.sidebar.ativa{
-  right: 0;
-}
-
-.sidebar a{
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 15px 20px;
-}
-
-.sidebar a:hover{
-  background: #34495e;
-}
-
-/* BOTÃO MENU */
-.menu-btn{
-  position: fixed;
-  top: 15px;
-  right: 20px;
-
-  background: #3498db;
-  color: white;
-  border: none;
-
-  padding: 12px 15px;
-  font-size: 20px;
-  cursor: pointer;
-
-  border-radius: 8px;
-  z-index: 1001;
 }
 
 /* PRIMEIRO CARROSSEL */
@@ -213,12 +224,39 @@ body{
 
 <!-- MENU SUPERIOR -->
 <div class="topbar">
-  <a href="sobre-temporario.html">Sobre</a>
-  <a href="#">Professores</a>
+  <a href="sobre-o-curso.html">Sobre</a>
+  <a href="Sobre-professores.html">Professores</a>
   <a href="#">Modalidades</a>
-  <a href="#">niveis</a>
-  <a href="#">Matriculas</a>
+  <a href="#">Níveis</a>
+  <a href="#">Matrículas</a>
   <a href="#">Contato</a>
+</div>
+
+<!-- BOTÕES LOGIN E CADASTRO -->
+<div class="auth-buttons">
+  <button onclick="mostrarFormulario('login')">Login</button>
+  <button onclick="mostrarFormulario('cadastro')">Cadastro</button>
+</div>
+
+<!-- FORMULÁRIO LOGIN -->
+<div id="login" class="formulario">
+  <h3>Login</h3>
+
+  <input type="email" placeholder="E-mail">
+  <input type="password" placeholder="Senha">
+
+  <button>Entrar</button>
+</div>
+
+<!-- FORMULÁRIO CADASTRO -->
+<div id="cadastro" class="formulario">
+  <h3>Cadastro</h3>
+
+  <input type="text" placeholder="Nome">
+  <input type="email" placeholder="E-mail">
+  <input type="password" placeholder="Senha">
+
+  <button>Cadastrar</button>
 </div>
 
 <!-- TEXTO CENTRAL -->
@@ -227,33 +265,21 @@ body{
   <p>Matricule-se ja</p>
 </div>
 
-<!-- BOTÃO -->
-<button class="menu-btn" onclick="abrirMenu()">☰</button>
-
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-  <a href="#">sobre</a>
-  <a href="#">Perfil</a>
-  <a href="#">Configurações</a>
-  <a href="#">Contato</a>
-</div>
-
 <!-- SEGUNDO CARROSSEL -->
 <div class="carousel2">
   <div class="carousel-track2">
 
-    <img src="imagenchama.jpg">
+    <img src="omnitrix.jpg">
     <img src="feedback.png">
     <img src="ben10.jpg">
-    <img src="aliens.png">
+    <img src="aliens.jpg">
     <img src="Alienxx.webp">
     <img src="4bracos.jpg">
 
-    <!-- REPETE -->
     <img src="imagenchama.jpg">
     <img src="EcoEcoAberturaFA2.webp">
     <img src="aliens.png">
-    <img src="aliens2.webp">
+    <img src="Aliens2.png">
     <img src="Alienxx.webp">
 
   </div>
@@ -267,11 +293,10 @@ body{
     <img src="EcoEcoAberturaFA2.webp">
     <img src="aliens.png">
     <img src="aliens2.webp">
-    <img src="friagem2.jpg">
+    <img src="Enormossaaaaaaaaaaaaaaaaaaauro.jpg">
     <img src="Alienxx.webp">
     <img src="friagem.jpg">
 
-    <!-- REPETE -->
     <img src="imagenchama.jpg">
     <img src="EcoEcoAberturaFA2.webp">
     <img src="aliens.png">
@@ -285,9 +310,22 @@ body{
 
 <script>
 
-function abrirMenu(){
-  document.getElementById("sidebar")
-  .classList.toggle("ativa");
+function mostrarFormulario(tipo){
+
+  const formulario = document.getElementById(tipo);
+
+  // Se já estiver aberto, fecha
+  if(formulario.style.display === "block"){
+    formulario.style.display = "none";
+    return;
+  }
+
+  // Fecha os dois
+  document.getElementById("login").style.display = "none";
+  document.getElementById("cadastro").style.display = "none";
+
+  // Abre o selecionado
+  formulario.style.display = "block";
 }
 
 </script>
